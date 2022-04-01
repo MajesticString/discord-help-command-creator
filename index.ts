@@ -33,7 +33,7 @@ export function createHelpCommand(
   data: StoreRegistryEntries['commands'],
   replyTo: CommandInteraction | Message,
   options: HelpCommandOptions = {}
-) {
+): Promise<PaginatedMessage> {
   const pages: HelpPages = {};
   // create a paginated message instance
   const pager = new PaginatedMessage();
@@ -85,5 +85,5 @@ ${
     content: options.wrongUserMessage ?? "This isn't your command.",
   }));
 
-  pager.run(replyTo);
+  return pager.run(replyTo);
 }
