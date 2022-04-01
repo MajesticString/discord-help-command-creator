@@ -27,7 +27,7 @@ import { createHelpCommand } from 'discord-help-command-creator';
 })
 export class UserCommand extends Command {
   public async messageRun(message: Message) {
-    createHelpCommand(this.store.get('commands'), message);
+    createHelpCommand(this.container.stores.get('commands'), message);
   }
 }
 ```
