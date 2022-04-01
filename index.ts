@@ -59,7 +59,7 @@ export function createHelpCommand(
               : ''
           }
 ${
-  cmd.aliases
+  cmd.aliases[0]
     ? '**Aliases: **' + cmd.aliases.map((alias) => `\`${alias}\``)
     : ''
 }
