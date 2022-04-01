@@ -1,6 +1,11 @@
 import { PaginatedMessage } from '@sapphire/discord.js-utilities';
-import { Command, CommandStore } from '@sapphire/framework';
-import { CommandInteraction, Message, MessageEmbed } from 'discord.js';
+import { Command, StoreRegistryEntries } from '@sapphire/framework';
+import {
+  Collection,
+  CommandInteraction,
+  Message,
+  MessageEmbed,
+} from 'discord.js';
 import ms from 'ms';
 
 export interface HelpCommandOptions {
@@ -15,18 +20,9 @@ export interface HelpCommandOptions {
 }
 
 export interface HelpPages {
-  [category: string]: SimpleCommand[];
+  [category: string]: Command[];
 }
-export type SimpleCommandStore = SimpleCommand[];
-export interface SimpleCommand {
-  category?: string;
-  description?: string;
-  name: string;
-  enabled?: boolean;
-  detailedDescription?: string;
-  aliases?: string[];
-  options: { options?: string | boolean; cooldownDelay?: number };
-}
+
 /**
  * Creates a help command
  * @param data The CommandStore instance to build the pages. Can be accessed through `this.container.stores.get('commands')`.
@@ -34,7 +30,7 @@ export interface SimpleCommand {
  * @param options
  */
 export function createHelpCommand(
-  data: SimpleCommandStore,
+  data: StoreRegistryEntries['commands'],
   replyTo: CommandInteraction | Message,
   options: HelpCommandOptions = {}
 ) {
