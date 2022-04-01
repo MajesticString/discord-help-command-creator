@@ -20,7 +20,7 @@ export interface HelpPages {
 
 /**
  * Creates a help command
- * @param data The CommandStore instance to build the pages. Can be accessed through `this.stores.get('commands')`.
+ * @param data The CommandStore instance to build the pages. Can be accessed through `this.store.get('commands')`.
  * @param replyTo The message or interaction to reply to when sending the help command.
  * @param options
  */
