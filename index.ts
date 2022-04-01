@@ -15,9 +15,18 @@ export interface HelpCommandOptions {
 }
 
 export interface HelpPages {
-  [category: string]: Command[];
+  [category: string]: SimpleCommand[];
 }
-
+export type SimpleCommandStore = SimpleCommand[];
+export interface SimpleCommand {
+  category?: string;
+  description?: string;
+  name: string;
+  enabled?: boolean;
+  detailedDescription?: string;
+  aliases?: string[];
+  options: { options?: string | boolean; cooldownDelay?: number };
+}
 /**
  * Creates a help command
  * @param data The CommandStore instance to build the pages. Can be accessed through `this.container.stores.get('commands')`.
@@ -25,7 +34,7 @@ export interface HelpPages {
  * @param options
  */
 export function createHelpCommand(
-  data: CommandStore,
+  data: SimpleCommandStore,
   replyTo: CommandInteraction | Message,
   options: HelpCommandOptions = {}
 ) {
