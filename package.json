@@ -1,0 +1,34 @@
+{
+  "name": "discord-help-command-creator",
+  "version": "1.0.0",
+  "description": "A utility for discord.js to create a help command",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MajesticString/discord-help-command-creator.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "Harry Allen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MajesticString/discord-help-command-creator/issues"
+  },
+  "homepage": "https://github.com/MajesticString/discord-help-command-creator#readme",
+  "dependencies": {
+    "@sapphire/discord.js-utilities": "^4.9.3",
+    "@sapphire/framework": "^2.4.1",
+    "discord.js": "^13.6.0",
+    "ms": "^2.1.3"
+  },
+  "peerDependencies": {
+    "@sapphire/framework": "2.x"
+  },
+  "devDependencies": {
+    "@types/ms": "^0.7.31"
+  }
+}
