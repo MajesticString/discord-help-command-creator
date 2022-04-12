@@ -1,11 +1,6 @@
 import { PaginatedMessage } from '@sapphire/discord.js-utilities';
 import { Command, StoreRegistryEntries } from '@sapphire/framework';
-import {
-  Collection,
-  CommandInteraction,
-  Message,
-  MessageEmbed,
-} from 'discord.js';
+import { CommandInteraction, Message, MessageEmbed } from 'discord.js';
 import ms from 'ms';
 
 export interface HelpCommandOptions {
@@ -80,7 +75,7 @@ ${
       )
     );
   });
-  pager.setWrongUserInteractionReply((i) => ({
+  pager.setWrongUserInteractionReply(() => ({
     ephemeral: true,
     content: options.wrongUserMessage ?? "This isn't your command.",
   }));
