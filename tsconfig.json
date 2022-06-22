@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2020",
+    "typeRoots": ["node_modules/@types"],
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
